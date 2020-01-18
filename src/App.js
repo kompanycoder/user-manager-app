@@ -1,13 +1,17 @@
 import React from 'react';
-// import logo from './logo.svg';
+import Header from './HOC/header';
+import Footer from './HOC/footer';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <h4>Content here</h4>
-    </div>
-  );
+function App (props) {
+    return (
+      <div className="App container">
+        <Header/>
+        {props.children}
+        <Footer/>
+      </div>
+    );
 }
 
 export default App;
