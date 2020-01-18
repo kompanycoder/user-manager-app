@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Developer Test: Frontend Development
+Summary
+We need you to take the following standard technical assessment to enable us to gauge the following:
 
-## Available Scripts
+Speed
+How you write code using ReactJS. (correctness, efficiency, readable, clear).
+How you decompose a problem and design a solution.
+How you are able to maintain a consistent state throughout the application using a dedicated state management container.
+How you are able to conform to ECMAScript standards for JavaScript throughout the application.
+Are you able to consume an API to communicate with an external data source within your application?
+How complete and thoughtful your implementation is. Can the reviewer run it immediately?
 
-In the project directory, you can run:
+Quiz:
+Given the below API endpoint and attached design template, you are required to complete the following tasks:
 
-### `yarn start`
+Setup a fresh web app based on ReactJS: The setup should use Webpack as the dedicated module bundler and dependency manager for your web app. It should also use either yarn or npm for package management.
+Implement the Browse and the Edit endpoints below.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Hint:
+For speed, you could use CreateReactApp contains pre configured webpack settings.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Establish a stable state tree for the application using redux for ReactJS.
+Once all is set, use the provided API endpoint to fetch data from an external server and display it in your web app, conforming a design template of your choice.
 
-### `yarn test`
+Note:
+It is key for your web app to use a state management container to handle all data mutations. As such, you are required to illustrate the use of the different component lifecycle hooks of the framework used as well as the following key concepts of state management container used:
+Redux:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+State
+Store
+Reducers
+Actions
+Action creators
 
-### `yarn build`
+Complementing the understanding of the JavaScript framework used, the quiz focuses on knowledge of scoping, function expressions (and how they differ from function declarations), references, process of variable and function declaration, order of evaluation, and a couple more things like delete operator, object and array instantiation, assignment and mutation as used in JavaScript.
+These are all relatively simple concepts, which we think every professional JavaScript developer should know.
+Most of these are applied in practice quite often.
+API Endpoints:
+Browse
+Method: GET
+Endpoint: "https://ti-react-test.herokuapp.com/users"
+Edit:
+Method: PATCH
+Endpoint: "https://ti-react-test.herokuapp.com/users/{id}"
+Parameters: {
+  "user"=>{
+  "bio"=>"MyText",
+  "email"=>"MyString",
+  "name"=>"MyString",
+  "occupation"=>"MyString"
+  }
+}
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Submission:
+Extra points for pretty functionality.
+Note that this task will require you to have a github/gitlab account. If you don't have either, you are required to setup one.
+Once you have completed the assessment reply to this email with a link to the github repo (Please ensure that the repo is public). You can remove it once we have given you feedback.
