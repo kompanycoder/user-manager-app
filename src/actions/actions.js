@@ -1,6 +1,6 @@
 import config from '../config/config';
 
-export function getUsers () {
+export function getUsers() {
     // console.log(config);
     return fetch(config.baseUrl).then((response)=>{
         return response.json();

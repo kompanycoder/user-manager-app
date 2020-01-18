@@ -27,7 +27,7 @@ export default class Content extends Component {
     render() {
         return (
             <div>
-                Content Component
+                {this.showUsers()}
             </div>
         )
     }
