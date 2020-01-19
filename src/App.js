@@ -4,14 +4,13 @@ import Footer from "./HOC/footer";
 // import Routes from './routes';
 import "./App.css";
 
-const App = (props) => {
-  return (
+const App = (props) => (
+  // console.log(props.children);
     <div className="container">
       <Header />
-      <div className="col-md-10">{props.children}</div>
+      <div className="container col-10">{props.children}</div>
       <Footer />
     </div>
-  );
-};
+);
 
 export default App;
