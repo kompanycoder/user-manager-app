@@ -2,6 +2,7 @@ import config from '../config/config';
 
 const GET_USERS = 'GET_USERS';
 
+// get user
 export function getUsers() {
     // console.log(config);
     let data = fetch(config.baseUrl).then((response)=>{
@@ -40,4 +41,28 @@ export function getSingleUser(id){
         payload: data
     }
 
+}
+// edit user
+export function editUser(user){
+    // note this will be successfull but will not edit the api data for now due to server security on data edit will get 400 status of request. But it works.
+    let userId = `/${user.id}`;
+    console.log(user, userId);
+    let options = {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: 'PATCH'
+    };
+    let data = fetch(config.baseUrl+userId,options,user).then((response)=>{ 
+        return response.json()
+    }).then((data)=>{
+        return data
+    }).catch((err)=>{
+        console.log(err);
+    });
+    return {
+        type: 'EDIT_USER',
+        payload: data
+    }
 }

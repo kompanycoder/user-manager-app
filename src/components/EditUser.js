@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 // import { getUsers } from '../actions/actions';
 import { Link } from "react-router-dom";
-import { getSingleUser } from "../actions/actions";
+import { getSingleUser, editUser } from "../actions/actions";
 class EditUser extends Component {
   constructor(props){
     super(props);
     this.state= {
       user:{
+        id:'',
         name: '',
         email:'',
         occupation:'',
@@ -32,13 +33,26 @@ class EditUser extends Component {
       }
     })
   }
-  handleInputChange =(e) => {
+  handleInputChange =(e, name) => {
     e.preventDefault();
+    const newformdata = {
+      ...this.state.user
+    }
+    newformdata[name] = e.target.value
+
+    this.setState({
+      user : newformdata 
+    })
   };
   handleSubmit = (e) => {
     e.preventDefault();
     let  userUpdate = this.state.user;
+
     console.log(userUpdate);
+    this.props.dispatch(editUser(userUpdate));
+    // remember to reroute user back to home page
+    this.props.history.push(`/`); 
+
   };
   render() {
     console.log(this.props);
@@ -56,17 +70,17 @@ class EditUser extends Component {
             </div>
             <div className="form-label-group">
               <label htmlFor="inputEmail">Email address</label>
-              <input type="email" id="inputEmail" className="form-control" placeholder="Email address" required="" autoFocus="" onChange={(e)=>this.handleInputChange(e)} value={this.state.user.email} />
+              <input type="email" id="inputEmail" className="form-control" placeholder="Email address" required="" autoFocus="" name="email" onChange={(e)=>this.handleInputChange(e, 'email')} value={this.state.user.email} />
               
             </div>
             <div className="form-label-group">
               <label htmlFor="inputOccupation">Occupation</label>
-              <input type="email" id="inputOccupation" className="form-control" placeholder="Occupation" required="" autoFocus="" onChange={(e)=>this.handleInputChange(e)} value={this.state.user.occupation} />
+              <input type="email" id="inputOccupation" className="form-control" placeholder="Occupation" required="" autoFocus="" name="occupation" onChange={(e)=>this.handleInputChange(e, 'occupation')} value={this.state.user.occupation} />
               
             </div>
             <div className="form-label-group">
               <label htmlFor="inputBio">Bio</label>
-              <textarea type="email" id="inputBio" className="form-control" rows="8" placeholder="Your Bio" required="" autoFocus="" onChange={(e)=>this.handleInputChange(e)} value={this.state.user.bio} ></textarea>
+              <textarea type="email" id="inputBio" className="form-control" rows="8" placeholder="Your Bio" required="" autoFocus="" name="bio" onChange={(e)=>this.handleInputChange(e, 'bio')} value={this.state.user.bio} ></textarea>
               
             </div>
             <button className="btn btn-block btn-outline-success mt-4" onClick={(e)=>this.handleSubmit(e)}>Edit</button>
