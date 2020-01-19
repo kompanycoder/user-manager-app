@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 // import { getUsers } from '../actions/actions';
 import { Link } from "react-router-dom";
+import { getSingleUser } from "../actions/actions";
 class EditUser extends Component {
   constructor(props){
     super(props);
@@ -14,9 +15,22 @@ class EditUser extends Component {
       }
     };
   }
-  compponentDidMount(){
+  componentDidMount(){
     // call dispatch with single user id here
-    
+   this.props.dispatch(getSingleUser(this.props.match.params.id)); 
+  }
+  componentWillReceiveProps(nextProps){
+    let updateDetails = nextProps.users.user;
+    console.log(updateDetails);
+    this.setState({
+      user: {
+        id:updateDetails.id,
+        name: updateDetails.name,
+        email:updateDetails.email,
+        occupation: updateDetails.occupation,
+        bio: updateDetails.bio
+      }
+    })
   }
   handleInputChange =(e) => {
     e.preventDefault();
@@ -37,7 +51,7 @@ class EditUser extends Component {
         <div className="col-md-10 mt-4">
           <div className="form-label-group">
               <label htmlFor="inputName">Name</label>
-              <input type="email" id="inputName" className="form-control" placeholder="Full name" required="" autoFocus="" onChange={(e)=>this.handleInputChange(e)} value={this.state.user.name} />
+              <input type="email" name="email" id="inputName" className="form-control" placeholder="Full name" required="" autoFocus="" onChange={(e)=>this.handleInputChange(e, 'name')} value={this.state.user.name} />
 
             </div>
             <div className="form-label-group">

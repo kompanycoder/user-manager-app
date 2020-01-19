@@ -9,13 +9,17 @@ class UserList extends Component {
     this.props.dispatch(getUsers());
   }
     showUsers = (users) =>(
-        users? users.map((elements)=>(
-            elements.map((item, i) => <UserUi key={i} {...item} />)
+      // console.log(users)
+
+        users ? users.map((item, i)=>(
+        <UserUi key={i} {...item} />
+          // console.log(item)
         )): 'No Items Loaded...'
     )
   render(props) {
-    // console.log(this.props.users);
-    let usersFound = this.props.users;
+    // console.log(this.props);
+    let usersFound = this.props.users.users;
+    
     return (
       <div className="container row">
         <h4 className="col-md-12 mt-4 mb-4 text-center">Users Dashboard Display </h4> 

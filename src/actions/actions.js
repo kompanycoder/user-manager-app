@@ -18,3 +18,26 @@ export function getUsers() {
         payload: data
     }
 };
+
+// before editing, get single user first into the edit component then edit 
+export function getSingleUser(id){
+    let userId = `/${id}`;
+    let options = {
+        method: 'GET'
+    };
+
+    let data = fetch(config.baseUrl+ userId,options).then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        // console.log(data);
+        return data;
+    }).catch((err)=>{
+        console.log(err);
+    });
+    // console.log(data);
+    return {
+        type : 'GET_SINGLE_USER',
+        payload: data
+    }
+
+}
