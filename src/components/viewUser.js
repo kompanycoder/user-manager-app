@@ -10,7 +10,8 @@ class ViewUser extends Component {
         console.log(this.props);
         return (
             <div className="container">
-                userList component
+                user component for specific veiw component
+                {/* not implemented but an actual possibility when items are alot... */}
             </div>
         )
     }
