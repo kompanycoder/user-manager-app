@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getUsers } from "../actions/actions";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import UserUi from '../app-ui/user_ui';
 class UserList extends Component {
   componentDidMount() {
