@@ -25,7 +25,7 @@ class UserList extends Component {
         <h4 className="col-md-12 mt-4 mb-4 text-center">Users Dashboard Display </h4> 
         {/* link to add user component. but the backend does not support adding of new user. Tested this.. */}
         {/* <Link className="btn btn-outline-info ml-4" to="/add">Add User</Link> */}
-        <div className="container col-md-12">{this.showUsers(usersFound)}</div>
+        <div className="container col-md-12 text-center">{this.showUsers(usersFound)}</div>
       </div>
     );
   }
