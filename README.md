@@ -1,6 +1,6 @@
 ## React Front-end. :+1:
 
-**Summary**
+**Summary :**
  This is a simple app to show case users, Allow Editing of user details and earching of user by name.
 ```
  [*] Users are Listed.
