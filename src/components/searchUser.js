@@ -62,7 +62,6 @@ class SearchUser extends Component {
           // console.log(match);
           return match;
       }
-      
     });
     
     // console.log(results);

@@ -13,7 +13,7 @@ export function getUsers() {
     }).catch((err)=>{
         console.log("Found Error..: \n" + err);
     });
-    console.log(data);
+    // console.log(data);
     return {
         type: GET_USERS,
         payload: data
