@@ -44,7 +44,7 @@ export function getSingleUser(id){
 }
 // edit user
 export function editUser(id,user){
-    // note this will be successfull but will not edit the api data for now due to server security on data edit will get 400 status of request. But it works.
+    // note this works. after adding body plus json integrity for object
     let userId = `/${id}`;
     console.log(user, userId);
     let restOfOptions = {

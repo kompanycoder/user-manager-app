@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import UserList from "./components/userList";
-// import AddUser from './components/viewUser';
+import SearchUser from './components/searchUser';
 import EditUser from './components/EditUser';
 import AppLayout from './App';
 
@@ -11,7 +11,7 @@ const Routes = () => {
       <Switch>
         <Route path="/" exact component={UserList} />
         <Route path="/users/:id" exact component={EditUser} />
-        {/* <Route path="/add" exact component={AddUser} /> */}
+        <Route path="/search" exact component={SearchUser} />
       </Switch>
     </AppLayout>
   );
