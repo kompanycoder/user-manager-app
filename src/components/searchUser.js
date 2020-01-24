@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getUsers } from "../actions/actions";
-// import UserFound from '../app-ui/user_search_ui';
+import UserSearchUi from '../app-ui/user_search_ui';
 import { Link } from "react-router-dom";
+
 class SearchUser extends Component {
     constructor(props) {
         super(props);
@@ -45,10 +46,10 @@ class SearchUser extends Component {
     e.preventDefault();
     let searchName = this.state.searchTerm.toLowerCase();
     let userList = this.state.users;
-    console.log(userList);
-    console.log(searchName);
+    // console.log(userList);
+    // console.log(searchName);
     //  filter functinality 
-    userList.forEach((user)=>{
+    let results = userList.filter((user) => {
       // console.log(user);
       // username to lowercase before omparing with searchterm
       let userName = user.name.toLowerCase();
@@ -58,25 +59,27 @@ class SearchUser extends Component {
       if(userName.includes(searchName)){
           // console.log(user);
           let match = user;
-          console.log(match);
-          // return match;
-          let results = [].push(match);
-          console.log(results);
-          this.setState({
-            filtered: results
-          });
-          console.log(this.state.filtered);
+          // console.log(match);
+          return match;
       }
       
     });
-    // console.log(matchingUser);
+    
+    // console.log(results);
+    this.setState({
+      filtered: results
+    })
 
     
   };
-  renderUsers =()=> {
-    // console.log(this.state.users);
-    // return foundUsers
-  }
+  renderUsers =(renderList)=> (
+    // console.log(this.state.filtered);
+    renderList ?
+      renderList.map((user, i)=>(
+      <UserSearchUi key={i} {...user} />
+    )) : "No items to Render"
+    
+  )
 
   render() {
     // console.log(this.state.users);
@@ -105,7 +108,7 @@ class SearchUser extends Component {
             </button>
             </form>
             <div className="col-md-10 mt-4 text-center">
-                {this.state.searching ? this.renderUsers(): "Search for user.."}
+                {this.state.searching ? this.renderUsers(this.state.filtered): "Search for user.."}
             </div>
         </div>
       </div>
