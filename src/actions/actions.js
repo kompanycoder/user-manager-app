@@ -43,18 +43,24 @@ export function getSingleUser(id){
 
 }
 // edit user
-export function editUser(user){
+export function editUser(id,user){
     // note this will be successfull but will not edit the api data for now due to server security on data edit will get 400 status of request. But it works.
-    let userId = `/${user.id}`;
+    let userId = `/${id}`;
     console.log(user, userId);
-    let options = {
+    let restOfOptions = {
         headers: {
-            'Accept': 'application/json',
+            // 'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        method: 'PATCH'
+        method: 'PATCH',
+        // cors mode not supported. tested this...
+        // mode: 'CORS'
+        body: JSON.stringify(user)
     };
-    let data = fetch(config.baseUrl+userId,options,user).then((response)=>{ 
+    // let body = JSON.stringify(user);
+    // console.log(body);
+
+    let data = fetch(config.baseUrl+userId,restOfOptions).then((response)=>{ 
         return response.json()
     }).then((data)=>{
         return data

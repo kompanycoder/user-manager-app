@@ -47,9 +47,10 @@ class EditUser extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     let  userUpdate = this.state.user;
+    let userId = this.state.user.id;
 
     console.log(userUpdate);
-    this.props.dispatch(editUser(userUpdate));
+    this.props.dispatch(editUser(userId, userUpdate));
     // remember to reroute user back to home page
     this.props.history.push(`/`); 
 

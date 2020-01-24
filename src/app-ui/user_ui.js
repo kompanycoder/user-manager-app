@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 const UserUi = (props) => {
-    console.log(props);
+    // console.log(props);
     return (
-        <div className="container">
+        <div className="container p-3">
             <div className="card p-3">
                 <div className="row">
                     <div className=" col-8">
