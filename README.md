@@ -7,7 +7,7 @@
  [*] User can edit info.
  [*] User can Search info
  [*] Api call was successful.
- [*] Deffetrent Api methods were supported.
- [*] Simplle and Elegent Styling was used.
+ [*] Defferent Api methods were supported.
+ [*] Simple and Elegent Styling was used.
 ```
 Project complete.
