@@ -37,7 +37,7 @@ class UserList extends Component {
       arrCount = newCount;
       return arrCount;
     }
-    return 'null';
+    return '0';
   }
 
   render(props) {

@@ -22,7 +22,7 @@ class SearchUser extends Component {
     //     users: usersFound
     // })
   }
-  UNSAFE_componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps){
     let newusers = nextProps.users.users;
     // console.log(newusers);
     this.setState({

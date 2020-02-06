@@ -20,7 +20,7 @@ class EditUser extends Component {
     // call dispatch with single user id here
    this.props.dispatch(getSingleUser(this.props.match.params.id)); 
   }
-  UNSAFE_componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps){
     let updateDetails = nextProps.users.user;
     // console.log(updateDetails);
     this.setState({
