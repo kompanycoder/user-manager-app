@@ -6,9 +6,9 @@ import "./App.css";
 
 const App = (props) => (
   // console.log(props.children);
-    <div className="container">
+    <div>
       <Header />
-      <div className="container col-10">{props.children}</div>
+      <div className="col-md-12">{props.children}</div>
       <Footer />
     </div>
 );
