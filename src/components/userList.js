@@ -46,7 +46,7 @@ class UserList extends Component {
 
     return (
       <div className="container-fluid">
-        <h4 className="col-md-12 mt-4 mb-4 text-center">
+        <h4 className="mt-4 mb-4 text-center">
           Users Dashboard Display
         </h4>
         <div className="row">

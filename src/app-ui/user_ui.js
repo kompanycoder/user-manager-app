@@ -11,14 +11,14 @@ const UserUi = (props) => {
                     </div>
                 <div className="row">
                     <div className=" col-11 text-left pt-1">
-                        <h6 className="pl-1">Name: {props.name}</h6>
-                        <h6 className="pl-1">Email: {props.email}</h6>
-                        <h6 className="pl-1">Occupation: {props.occupation}</h6>
+                        <h6 className="text">Name: {props.name}</h6>
+                        <p className="text">Email: {props.email}</p>
+                        <p className="text">Occupation: {props.occupation}</p>
                         
                     </div>
                     <div className="col-12 text-justify">
-                        <h6 className="pl-1">Bio :</h6>
-                            <p className="pl-1 btn-outline-primary">{props.bio}</p>
+                        <h6 className="primary text-success">Bio :</h6>
+                            <p className="pl-1 text-info text-capitalize">{props.bio}</p>
                     </div>
                 </div>
             </div>
