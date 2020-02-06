@@ -20,9 +20,9 @@ class EditUser extends Component {
     // call dispatch with single user id here
    this.props.dispatch(getSingleUser(this.props.match.params.id)); 
   }
-  componentWillReceiveProps(nextProps){
+  UNSAFE_componentWillReceiveProps(nextProps){
     let updateDetails = nextProps.users.user;
-    console.log(updateDetails);
+    // console.log(updateDetails);
     this.setState({
       user: {
         id:updateDetails.id,
@@ -49,21 +49,23 @@ class EditUser extends Component {
     let  userUpdate = this.state.user;
     let userId = this.state.user.id;
 
-    console.log(userUpdate);
+    // console.log(userUpdate);
     this.props.dispatch(editUser(userId, userUpdate));
     // remember to reroute user back to home page
     this.props.history.push(`/`); 
 
   };
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
-      <div className="container row">
-        <h4>Edit User</h4>{" "}
-        <Link className="btn btn-outline-info ml-5" to="/">
+      <div className="row">
+        <Link className="btn btn-outline-info right-most-btn" to="/">
           Back
         </Link>
-        <div className="col-md-10 mt-4">
+        <div className="container">
+        <h4 className="text-left">Edit User</h4>
+        
+        <div className="col-md-10">
           <div className="form-label-group">
               <label htmlFor="inputName">Name</label>
               <input type="email" name="email" id="inputName" className="form-control" placeholder="Full name" required="" autoFocus="" onChange={(e)=>this.handleInputChange(e, 'name')} value={this.state.user.name} />
@@ -86,6 +88,7 @@ class EditUser extends Component {
             </div>
             <button className="btn btn-block btn-outline-success mt-4" onClick={(e)=>this.handleSubmit(e)}>Edit</button>
         </div>
+      </div>
       </div>
     );
   }

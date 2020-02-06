@@ -9,6 +9,12 @@ html, body{
   width: 100%;
   height: 100%;
 }
+.right-most-btn {
+  display: block;
+  right: 10%;
+  position: absolute;
+  z-index: 2;
+}
 .footer {
   bottom: 0;
   position: relative;

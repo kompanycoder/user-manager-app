@@ -37,6 +37,7 @@ class UserList extends Component {
       arrCount = newCount;
       return arrCount;
     }
+    return 'null';
   }
 
   render(props) {
@@ -48,7 +49,9 @@ class UserList extends Component {
         <h4 className="col-md-12 mt-4 mb-4 text-center">
           Users Dashboard Display
         </h4>
-        <p className="text-center pr-2">User count is at : {this.userCount(usersFound)} </p> || <Link to="/search" className="btn btn-outline-info ml-3">Search Users</Link>
+        <div className="row">
+        <p className="text-center pr-2">User count is at : {this.userCount(usersFound)} </p> <Link to="/search" className="btn btn-outline-info ml-3 right-most-btn">Search Users</Link>
+        </div>
         
         {/* link to add user component. but the backend does not support adding of new user. Tested this.. */}
         {/* <Link className="btn btn-outline-info ml-4" to="/add">Add User</Link> */}

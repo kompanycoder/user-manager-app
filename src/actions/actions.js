@@ -46,7 +46,7 @@ export function getSingleUser(id){
 export function editUser(id,user){
     // note this works. after adding body plus json integrity for object
     let userId = `/${id}`;
-    console.log(user, userId);
+    // console.log(user, userId);
     let restOfOptions = {
         headers: {
             // 'Accept': 'application/json',

@@ -22,7 +22,7 @@ class SearchUser extends Component {
     //     users: usersFound
     // })
   }
-  componentWillReceiveProps(nextProps){
+  UNSAFE_componentWillReceiveProps(nextProps){
     let newusers = nextProps.users.users;
     // console.log(newusers);
     this.setState({
@@ -49,19 +49,22 @@ class SearchUser extends Component {
     // console.log(userList);
     // console.log(searchName);
     //  filter functinality 
+
+    // eslint-disable-next-line array-callback-return
     let results = userList.filter((user) => {
       // console.log(user);
       // username to lowercase before omparing with searchterm
       let userName = user.name.toLowerCase();
       // console.log(userName);
-      
+      let match;
       // console.log(newArr);
       if(userName.includes(searchName)){
           // console.log(user);
-          let match = user;
+           match= user;
           // console.log(match);
           return match;
       }
+      // return match; done in clause logic above.
     });
     
     // console.log(results);
@@ -84,19 +87,21 @@ class SearchUser extends Component {
     // console.log(this.state.users);
     // let usersFound = this.props.users.users;
     return (
-      <div className="container row">
-        <h6 className="text-center">Who are you trying to find?</h6> <Link className="btn btn-outline-info ml-4 mb-2 mr-0" to="/">
+      <div className="container">
+       <div className="row">
+       <h6 className="text-center">Who are you trying to find?</h6> <Link className="btn btn-outline-info right-most-btn" to="/">
           Back
         </Link>
+       </div>
         
-        <div className="col-md-12">
+        <div className="col-md-12 mt-4">
             <form
-            className="form-inline ml-4"
+            className="form-inline"
             onSubmit={(e) =>this.findUser(e)}
             >
             <input
                 name="search"
-                className="form-control"
+                className="form-control col-md-7"
                 placeholder="Search user by name"
                 onChange={e => this.searchTerm(e)}
                 type="text"
