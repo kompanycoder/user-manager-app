@@ -11,9 +11,16 @@ html, body{
 }
 .right-most-btn {
   display: block;
-  right: 10%;
+  right: 7%;
   position: absolute;
   z-index: 2;
+}
+.card-btn {
+  display: block;
+  right: 2%;
+  top: 2%;
+  position: absolute;
+  z-index: 1;
 }
 .footer {
   bottom: 0;

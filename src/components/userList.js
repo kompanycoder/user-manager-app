@@ -23,7 +23,7 @@ class UserList extends Component {
           <UserUi key={i} {...item} />
           // console.log(item)
         ))
-      : "No Items Loaded...";
+      : "No users loaded...";
   
   // usercount functionality
   userCount(users) {
@@ -45,8 +45,8 @@ class UserList extends Component {
     let usersFound = this.props.users.users;
 
     return (
-      <div className="container row">
-        <h4 className="col-md-12 mt-4 mb-4 text-center">
+      <div className="container-fluid">
+        <h4 className="mt-4 mb-4 text-center">
           Users Dashboard Display
         </h4>
         <div className="row">
@@ -57,7 +57,7 @@ class UserList extends Component {
         {/* <Link className="btn btn-outline-info ml-4" to="/add">Add User</Link> */}
         {/* not implemented but an actual possibility when items are alot... */}
         
-        <div className="container col-md-12 text-center">
+        <div className="container-fluid text-center">
           {this.showUsers(usersFound)}
         </div>
     
