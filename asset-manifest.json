@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/user-manager-app/static/css/main.7b699917.chunk.css",
+    "main.js": "/user-manager-app/static/js/main.1234f265.chunk.js",
+    "main.js.map": "/user-manager-app/static/js/main.1234f265.chunk.js.map",
+    "runtime-main.js": "/user-manager-app/static/js/runtime-main.16bfb8b5.js",
+    "runtime-main.js.map": "/user-manager-app/static/js/runtime-main.16bfb8b5.js.map",
+    "static/css/2.829c9cb5.chunk.css": "/user-manager-app/static/css/2.829c9cb5.chunk.css",
+    "static/js/2.23516c22.chunk.js": "/user-manager-app/static/js/2.23516c22.chunk.js",
+    "static/js/2.23516c22.chunk.js.map": "/user-manager-app/static/js/2.23516c22.chunk.js.map",
+    "index.html": "/user-manager-app/index.html",
+    "precache-manifest.38fea3c3b04a15debfe1aefb7ce97cb5.js": "/user-manager-app/precache-manifest.38fea3c3b04a15debfe1aefb7ce97cb5.js",
+    "service-worker.js": "/user-manager-app/service-worker.js",
+    "static/css/2.829c9cb5.chunk.css.map": "/user-manager-app/static/css/2.829c9cb5.chunk.css.map",
+    "static/css/main.7b699917.chunk.css.map": "/user-manager-app/static/css/main.7b699917.chunk.css.map",
+    "static/js/2.23516c22.chunk.js.LICENSE.txt": "/user-manager-app/static/js/2.23516c22.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.16bfb8b5.js",
+    "static/css/2.829c9cb5.chunk.css",
+    "static/js/2.23516c22.chunk.js",
+    "static/css/main.7b699917.chunk.css",
+    "static/js/main.1234f265.chunk.js"
+  ]
+}
