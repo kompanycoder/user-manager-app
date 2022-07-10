@@ -5,10 +5,14 @@ import Footer from "./HOC/footer";
 import "./App.css";
 
 const App = (props) => (
-  // console.log(props.children);
+  // console.log(props)
     <div>
-      <Header />
-      <div className="col-md-12">{props.children}</div>
+      <Header /> 
+       { props?
+        // console.log(props)
+        <div className="col-md-12">{props.children}</div>
+        : "no users to render"
+      }
       <Footer />
     </div>
 );

@@ -13,9 +13,10 @@ class UserList extends Component {
   }
   componentDidMount() {
     // call dispatch to get props with data here
+    // console.log(this.props);
     this.props.dispatch(getUsers());
   }
-  showUsers = users =>
+  showUsers = (users) =>
     // console.log(users)
 
     users
