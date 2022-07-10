@@ -1,13 +1,13 @@
 {
   "name": "user-manager-app",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.2",
     "@testing-library/react": "^10.4.7",
     "@testing-library/user-event": "^12.0.17",
     "bootstrap": "^4.5.0",
-    "node-sass": "^6.0.1",
+    "node-sass": "7.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
@@ -28,7 +28,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "https://kompanycoder.github.io/user-manager-app",
+  "homepage": "https://kompanycoder.github.io/users",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -43,5 +43,10 @@
   },
   "devDependencies": {
     "gh-pages": "^3.1.0"
-  }
+  },
+  "description": "simple user manager app built in react",
+  "main": "index.js",
+  "repository": "https://github.com/kompanycoder/user-manager-app.git",
+  "author": "kompanycoder",
+  "license": "MIT"
 }

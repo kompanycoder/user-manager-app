@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import UserList from "./components/userList";
 import SearchUser from './components/searchUser';
 import EditUser from './components/EditUser';
@@ -9,9 +9,10 @@ const Routes = () => {
   return (
     <AppLayout>
       <Switch>
-        <Route path="/" exact component={UserList} />
+        <Route path="/users" exact component={UserList} />
         <Route path="/users/:id" exact component={EditUser} />
         <Route path="/search" exact component={SearchUser} />
+        <Redirect path="**" to="/users" />
       </Switch>
     </AppLayout>
   );

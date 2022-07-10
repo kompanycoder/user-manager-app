@@ -1,4 +1,5 @@
-export default function (state={}, action) {
+// look into this
+const useReducer = (state={}, action) => {
     switch(action.type){
         case 'GET_USERS':
             return {...state, users:action.payload};
@@ -10,3 +11,5 @@ export default function (state={}, action) {
         return state;
     }
 }
+
+export default useReducer;

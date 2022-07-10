@@ -1,7 +1,7 @@
-## React Front-end. :+1:
+# User Manager App.
 
-**Summary :**
- This is a simple app to show case users, Allow Editing of user details and earching of user by name.
+## App Summary :
+ This is a simple app to show case users, Allow Editing of user details and searching of user by name.
 ```
  [*] Users are Listed.
  [*] User can edit info.

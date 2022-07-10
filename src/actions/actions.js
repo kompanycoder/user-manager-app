@@ -1,11 +1,14 @@
 import config from '../config/config';
-
+// used fetch instead of axios
+// import axios from 'axios';
 const GET_USERS = 'GET_USERS';
 
+// look into this -solved
 // get user
-export function getUsers() {
+export async function getUsers() {
     // console.log(config);
-    let data = fetch(config.baseUrl).then((response)=>{
+    let data = await fetch(config.baseUrl).then((response)=>{
+        // console.log(response);
         return response.json();
     }).then((result)=>{
         // console.log(result);
@@ -21,13 +24,13 @@ export function getUsers() {
 };
 
 // before editing, get single user first into the edit component then edit 
-export function getSingleUser(id){
+export async function getSingleUser(id) {
     let userId = `/${id}`;
     let options = {
         method: 'GET'
     };
 
-    let data = fetch(config.baseUrl+ userId,options).then((response)=>{
+    let data = await fetch(config.baseUrl+ userId,options).then((response)=>{
         return response.json();
     }).then((data)=>{
         // console.log(data);
@@ -43,7 +46,7 @@ export function getSingleUser(id){
 
 }
 // edit user
-export function editUser(id,user){
+export async function editUser(id,user){
     // note this works. after adding body plus json integrity for object
     let userId = `/${id}`;
     // console.log(user, userId);
@@ -60,7 +63,7 @@ export function editUser(id,user){
     // let body = JSON.stringify(user);
     // console.log(body);
 
-    let data = fetch(config.baseUrl+userId,restOfOptions).then((response)=>{ 
+    let data = await fetch(config.baseUrl+userId,restOfOptions).then((response)=>{ 
         return response.json()
     }).then((data)=>{
         return data
