@@ -11,7 +11,7 @@ const App = (props) => (
        { props?
         // console.log(props)
         <div className="col-md-12">{props.children}</div>
-        : "no users to render"
+        : <p>waiting for users data to render</p>
       }
       <Footer />
     </div>

@@ -9,6 +9,24 @@ html, body{
   width: 100%;
   height: 100%;
 }
+.usm-logo {
+  display: inline-block;
+  margin-left: 2%;
+  margin-right: 9%;
+  /* padding: auto; */
+  max-width: 50px;
+  color: inherit;
+}
+.usm-logo:hover, .usm-logo:active {
+  color: inherit;
+  text-decoration: none;
+}
+.usm-title {
+  display: inline-block;
+  max-width: 400px;
+  margin-left: 9%;
+  margin-right: auto;
+}
 .right-most-btn {
   display: block;
   right: 7%;

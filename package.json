@@ -7,12 +7,13 @@
     "@testing-library/react": "^10.4.7",
     "@testing-library/user-event": "^12.0.17",
     "bootstrap": "^4.5.0",
-    "node-sass": "7.0.0",
+    "node-sass": "^7.0.1",
+    "npm": "^8.13.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.0",
+    "react-scripts": "^4.0.0",
     "redux": "^4.0.5",
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.3.0"
@@ -28,7 +29,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "https://kompanycoder.github.io/users",
+  "homepage": "https://manager-app.netlify.app",
   "browserslist": {
     "production": [
       ">0.2%",

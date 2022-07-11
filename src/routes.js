@@ -9,7 +9,7 @@ const Routes = () => {
   return (
     <AppLayout>
       <Switch>
-        <Route path="/users" exact component={UserList} />
+        <Route path="/" exact component={UserList} />
         <Route path="/users/:id" exact component={EditUser} />
         <Route path="/search" exact component={SearchUser} />
         <Redirect path="**" to="/users" />
