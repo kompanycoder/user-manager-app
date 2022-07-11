@@ -86,7 +86,7 @@ class EditUser extends Component {
               <textarea type="email" id="inputBio" className="form-control" rows="8" placeholder="Your Bio" required="" autoFocus="" name="bio" onChange={(e)=>this.handleInputChange(e, 'bio')} value={this.state.user.bio} ></textarea>
               
             </div>
-            <button className="btn btn-block btn-outline-success mt-4" onClick={(e)=>this.handleSubmit(e)}>Edit</button>
+            <button className="btn btn-block btn-outline-success mt-4" onClick={(e)=>this.handleSubmit(e)}>Submit</button>
         </div>
       </div>
       </div>
