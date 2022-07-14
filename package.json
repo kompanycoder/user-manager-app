@@ -3,20 +3,19 @@
   "version": "1.0.1",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.2",
-    "@testing-library/react": "^10.4.7",
-    "@testing-library/user-event": "^12.0.17",
-    "bootstrap": "^4.5.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.2.3",
+    "bootstrap": "^5.1.3",
     "node-sass": "^7.0.1",
-    "npm": "^8.13.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.0",
-    "redux": "^4.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
+    "redux": "^4.2.0",
     "redux-promise": "^0.6.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,9 +41,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "gh-pages": "^3.1.0"
-  },
+  "devDependencies": {},
   "description": "simple user manager app built in react",
   "main": "index.js",
   "repository": "https://github.com/kompanycoder/user-manager-app.git",
