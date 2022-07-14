@@ -14,11 +14,11 @@ _Project complete_
 
 **Project capabilities 🥈**
 
-`
+```
  [✔️] Users are Listed.
  [✔️] User can edit info.
  [✔️] User can Search info
  [✔️] Api call was successful.
  [✔️] Different Api methods were supported.
  [✔️] Simple and Elegent Styling was used.
-`
+```
