@@ -88,30 +88,32 @@ class SearchUser extends Component {
     // let usersFound = this.props.users.users;
     return (
       <div className="container">
-       <div className="row">
+       <div className="col text-center">
        <h6 className="text-center">Who are you trying to find?</h6> <Link className="btn btn-outline-info right-most-btn" to="/">
           Back
         </Link>
        </div>
         
-        <div className="col-md-12 mt-4">
+        <div className="row-md mt-4">
             <form
             className="form-inline"
             onSubmit={(e) =>this.findUser(e)}
             >
-            <input
-                name="search"
-                className="form-control col-md-7"
-                placeholder="Search user by name"
-                onChange={e => this.searchTerm(e)}
-                type="text"
-                defaultValue={this.state.searchTerm}
-            />{" "}
-            <button className="btn btn-light" type="submit">
-                Search
-            </button>
+            <div className="input-group">
+              <input
+                  name="search"
+                  className="form-control"
+                  placeholder="Search user by name"
+                  onChange={e => this.searchTerm(e)}
+                  type="text"
+                  defaultValue={this.state.searchTerm}
+              />{" "}
+              <button className="btn btn-light" type="submit">
+                  Search
+              </button>
+            </div>
             </form>
-            <div className="col-md-10 mt-4 text-center">
+            <div className="col mt-4 row-margin">
                 {this.state.searching ? this.renderUsers(this.state.filtered): "Search for user.."}
             </div>
         </div>

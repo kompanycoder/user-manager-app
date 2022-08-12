@@ -42,7 +42,7 @@ class UserList extends Component {
   }
 
   render(props) {
-    // console.log(this.props);
+    console.log(this.props);
     let usersFound = this.props.users.users;
 
     return (
@@ -50,15 +50,16 @@ class UserList extends Component {
         <h4 className="mt-4 mb-4 text-center">
           Users Dashboard Display
         </h4>
-        <div className="row">
-        <p className="text-center pr-2">User count is at : {this.userCount(usersFound)} </p> <Link to="/search" className="btn btn-outline-info ml-3 right-most-btn">Search Users</Link>
+        <div className="col">
+        <p className="text-center pr-2">User count is at : {this.userCount(usersFound)} </p> 
+        <Link to="/search" className="btn btn-sm btn-outline-info ml-3 right-most-btn">Search Users</Link>
         </div>
         
         {/* link to add user component. but the backend does not support adding of new user. Tested this.. */}
         {/* <Link className="btn btn-outline-info ml-4" to="/add">Add User</Link> */}
         {/* not implemented but an actual possibility when items are alot... */}
         
-        <div className="container-fluid text-center">
+        <div className="col p-2">
           {this.showUsers(usersFound)}
         </div>
     

@@ -6,7 +6,9 @@ import { getSingleUser, editUser } from "../actions/actions";
 class EditUser extends Component {
   constructor(props){
     super(props);
-    this.state= {
+    // needs functional component 
+    // let navigate = useNavigate();
+    this.state = {
       user:{
         id:'',
         name: '',
@@ -18,20 +20,33 @@ class EditUser extends Component {
   }
   componentDidMount(){
     // call dispatch with single user id here
-   this.props.dispatch(getSingleUser(this.props.match.params.id)); 
+    console.log(window.location.pathname);
+    // get num value from path
+    let userId = window.location.pathname.toString().split('/')[2];
+    console.log(userId);
+
+    if(userId) {
+      this.props.dispatch(getSingleUser(userId)); 
+      console.log(this.props);
+    }
   }
-  componentWillReceiveProps(nextProps){
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
     let updateDetails = nextProps.users.user;
-    // console.log(updateDetails);
-    this.setState({
-      user: {
-        id:updateDetails.id,
-        name: updateDetails.name,
-        email:updateDetails.email,
-        occupation: updateDetails.occupation,
-        bio: updateDetails.bio
-      }
-    })
+    
+    // add conditional logic
+    if (updateDetails !== undefined && updateDetails !== null) {
+      console.log(updateDetails);
+      this.setState({
+        user: {
+          id:updateDetails.id,
+          name: updateDetails.name,
+          email:updateDetails.email,
+          occupation: updateDetails.occupation,
+          bio: updateDetails.bio
+        }
+      });
+    }
   }
   handleInputChange =(e, name) => {
     e.preventDefault();
@@ -52,13 +67,14 @@ class EditUser extends Component {
     // console.log(userUpdate);
     this.props.dispatch(editUser(userId, userUpdate));
     // remember to reroute user back to home page
-    this.props.history.push(`/`); 
+    // use navigate in functional component 
+    this.props.history.push(`/`);
 
   };
   render() {
-    // console.log(this.props);
+    console.log(this.props);
     return (
-      <div className="row">
+      <div className="col">
         <Link className="btn btn-outline-info right-most-btn" to="/">
           Back
         </Link>
