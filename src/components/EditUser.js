@@ -6,7 +6,9 @@ import { getSingleUser, editUser } from "../actions/actions";
 class EditUser extends Component {
   constructor(props){
     super(props);
-    this.state= {
+    // needs functional component 
+    // let navigate = useNavigate();
+    this.state = {
       user:{
         id:'',
         name: '',
@@ -18,20 +20,33 @@ class EditUser extends Component {
   }
   componentDidMount(){
     // call dispatch with single user id here
-   this.props.dispatch(getSingleUser(this.props.match.params.id)); 
+    // console.log(window.location.pathname);
+    // get num value from path
+    let userId = window.location.pathname.toString().split('/')[2];
+    // console.log(userId);
+
+    if(userId) {
+      this.props.dispatch(getSingleUser(userId)); 
+      // console.log(this.props);
+    }
   }
-  componentWillReceiveProps(nextProps){
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    // console.log(nextProps);
     let updateDetails = nextProps.users.user;
-    // console.log(updateDetails);
-    this.setState({
-      user: {
-        id:updateDetails.id,
-        name: updateDetails.name,
-        email:updateDetails.email,
-        occupation: updateDetails.occupation,
-        bio: updateDetails.bio
-      }
-    })
+    
+    // add conditional logic
+    if (updateDetails !== undefined && updateDetails !== null) {
+      // console.log(updateDetails);
+      this.setState({
+        user: {
+          id:updateDetails.id,
+          name: updateDetails.name,
+          email:updateDetails.email,
+          occupation: updateDetails.occupation,
+          bio: updateDetails.bio
+        }
+      });
+    }
   }
   handleInputChange =(e, name) => {
     e.preventDefault();
@@ -52,41 +67,42 @@ class EditUser extends Component {
     // console.log(userUpdate);
     this.props.dispatch(editUser(userId, userUpdate));
     // remember to reroute user back to home page
-    this.props.history.push(`/`); 
+    // use navigate in functional component 
+    this.props.history.push(`/`);
 
   };
   render() {
     // console.log(this.props);
     return (
-      <div className="row">
+      <div className="col">
         <Link className="btn btn-outline-info right-most-btn" to="/">
           Back
         </Link>
         <div className="container">
-        <h4 className="text-left">Edit User</h4>
+        <h4 className="text-left">User Details</h4>
         
         <div className="col-md-10">
           <div className="form-label-group">
               <label htmlFor="inputName">Name</label>
-              <input type="email" name="email" id="inputName" className="form-control" placeholder="Full name" required="" autoFocus="" onChange={(e)=>this.handleInputChange(e, 'name')} value={this.state.user.name} />
+              <input type="email" name="email" id="inputName" className="form-control" placeholder="Full name" required="" autoFocus="" onChange={(e)=>this.handleInputChange(e, 'name')} value={this.state.user.name} disabled={true} />
 
             </div>
             <div className="form-label-group">
               <label htmlFor="inputEmail">Email address</label>
-              <input type="email" id="inputEmail" className="form-control" placeholder="Email address" required="" autoFocus="" name="email" onChange={(e)=>this.handleInputChange(e, 'email')} value={this.state.user.email} />
+              <input type="email" id="inputEmail" className="form-control" placeholder="Email address" required="" autoFocus="" name="email" onChange={(e)=>this.handleInputChange(e, 'email')} value={this.state.user.email} disabled={true} />
               
             </div>
             <div className="form-label-group">
               <label htmlFor="inputOccupation">Occupation</label>
-              <input type="email" id="inputOccupation" className="form-control" placeholder="Occupation" required="" autoFocus="" name="occupation" onChange={(e)=>this.handleInputChange(e, 'occupation')} value={this.state.user.occupation} />
+              <input type="email" id="inputOccupation" className="form-control" placeholder="Occupation" required="" autoFocus="" name="occupation" onChange={(e)=>this.handleInputChange(e, 'occupation')} value={this.state.user.occupation} disabled={true} />
               
             </div>
             <div className="form-label-group">
               <label htmlFor="inputBio">Bio</label>
-              <textarea type="email" id="inputBio" className="form-control" rows="8" placeholder="Your Bio" required="" autoFocus="" name="bio" onChange={(e)=>this.handleInputChange(e, 'bio')} value={this.state.user.bio} ></textarea>
+              <textarea type="email" id="inputBio" className="form-control" rows="8" placeholder="Your Bio" required="" autoFocus="" name="bio" onChange={(e)=>this.handleInputChange(e, 'bio')} value={this.state.user.bio} disabled={true} ></textarea>
               
             </div>
-            <button className="btn btn-block btn-outline-success mt-4" onClick={(e)=>this.handleSubmit(e)}>Submit</button>
+            {/* <button className="btn btn-block btn-outline-success mt-4" onClick={(e)=>this.handleSubmit(e)}>Submit</button> */}
         </div>
       </div>
       </div>

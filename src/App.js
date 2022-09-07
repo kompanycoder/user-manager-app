@@ -10,7 +10,7 @@ const App = (props) => (
       <Header /> 
        { props?
         // console.log(props)
-        <div className="col-md-12">{props.children}</div>
+        <div className="col">{props.children}</div>
         : <p>waiting for users data to render</p>
       }
       <Footer />

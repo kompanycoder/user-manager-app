@@ -24,20 +24,37 @@ export async function getUsers() {
 };
 
 // before editing, get single user first into the edit component then edit 
+// refactor for raw github data fetch
 export async function getSingleUser(id) {
-    let userId = `/${id}`;
+    let userId = id;
     let options = {
         method: 'GET'
     };
 
-    let data = await fetch(config.baseUrl+ userId,options).then((response)=>{
+    let data = await fetch(config.baseUrl,options).then((response)=>{
         return response.json();
-    }).then((data)=>{
-        // console.log(data);
-        return data;
-    }).catch((err)=>{
+        }).then((data)=>{
+        // data array
+        let dataArray = [].concat(...data);
+        // console.log(dataArray);
+        // return matching data object
+        let userInstance = {};
+        dataArray.forEach((userItem) => {
+            // check type 
+            if (userItem.id.toString() === userId.toString()) {
+                // console.log(userItem);
+                userInstance = userItem;
+            }
+            // console.log(userItem);
+        });
+        
+            if (userInstance !== null && userInstance !== undefined) {
+                // console.log(userInstance);
+                return userInstance;
+            }
+        }).catch((err)=>{
         console.log(err);
-    });
+        });
     // console.log(data);
     return {
         type : 'GET_SINGLE_USER',
@@ -45,7 +62,7 @@ export async function getSingleUser(id) {
     }
 
 }
-// edit user
+// edit user -disabled for now
 export async function editUser(id,user){
     // note this works. after adding body plus json integrity for object
     let userId = `/${id}`;
