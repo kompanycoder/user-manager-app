@@ -42,7 +42,7 @@ class UserList extends Component {
   }
 
   render(props) {
-    console.log(this.props);
+    // console.log(this.props);
     let usersFound = this.props.users.users;
 
     return (
@@ -52,7 +52,7 @@ class UserList extends Component {
         </h4>
         <div className="col">
         <p className="text-center pr-2">User count is at : {this.userCount(usersFound)} </p> 
-        <Link to="/search" className="btn btn-sm btn-outline-info ml-3 right-most-btn">Search Users</Link>
+        <Link to="/search" className="btn btn-sm btn-outline-primary ml-3 right-most-btn">Search Users</Link>
         </div>
         
         {/* link to add user component. but the backend does not support adding of new user. Tested this.. */}
