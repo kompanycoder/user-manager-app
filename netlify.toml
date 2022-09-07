@@ -27,3 +27,35 @@
   publish = "build/"
   command = "yarn start"
   environment = { NODE_VERSION = "14.15.3" }
+
+# Deploy Preview context: all deploys generated from
+# a pull/merge request will inherit these settings.
+[context.deploy-preview]
+  publish = "dist/"
+
+# Redirects and headers are GLOBAL for all builds – they do not
+# get scoped to contexts no matter where you define them in the file.
+# For context-specific rules, use _headers or _redirects files,
+# which are PER-DEPLOY.
+
+# A basic redirect rule
+[[redirects]]
+  from = "/*"
+  to = "/"
+
+# The following redirect is intended for use with most SPAs
+# that handle routing internally.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+
+  
