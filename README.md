@@ -10,15 +10,14 @@ _Project complete_
 
 ## App Summary 🌤️
 
- This is a simple app to show case users, Allow Editing of user details and searching of user by name.
+ This is a simple app to show case users, Allow viewing of user details and searching of user by name.
 
 **Project capabilities 🥈**
 
 ```
  [✔️] Users are Listed.
- [✔️] User can edit info.
+ [✔️] User can view info.
  [✔️] User can Search info
  [✔️] Api call was successful.
- [✔️] Different Api methods were supported.
  [✔️] Simple and Elegent Styling was used.
 ```
